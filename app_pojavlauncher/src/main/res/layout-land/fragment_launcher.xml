@@ -1,223 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:id="@+id/fragment_menu_main"
-	android:gravity="top"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:orientation="vertical"
-	android:background="@color/background_app">
-	<ScrollView
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintBottom_toTopOf="@id/mc_version_spinner">
-		<androidx.constraintlayout.widget.ConstraintLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-			<ImageView
-    android:id="@+id/crystal_header_logo"
-    android:layout_width="280dp"
-    android:layout_height="140dp"
-    android:layout_marginTop="8dp"
-    android:adjustViewBounds="true"
-    android:scaleType="fitCenter"
-    android:src="@drawable/ic_mojo_full"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app">
 
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
-	<TextView
-    android:id="@+id/crystal_header_title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    <!-- Left launcher panel -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/crystal_left_panel"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="58dp"
+        android:background="@drawable/crystal_menu_card"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/crystal_right_panel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.34">
 
-    android:text="Crystal Launcher"
-    android:textStyle="bold"
-    android:textSize="32sp"
+        <ImageView
+            android:id="@+id/crystal_header_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_mojo_full"
+            android:scaleType="fitCenter"
+            android:contentDescription="Crystal Launcher logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    android:textColor="#FFFFFF"
+        <TextView
+            android:id="@+id/crystal_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="CRYSTAL LAUNCHER"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:letterSpacing="0.06"
+            app:layout_constraintTop_toBottomOf="@id/crystal_header_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    app:layout_constraintTop_toBottomOf="@id/crystal_header_logo"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
-	 <TextView
-    android:id="@+id/crystal_header_subtitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/crystal_header_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Your Minecraft experience."
+            android:textColor="@color/secondary_text"
+            android:textSize="11sp"
+            app:layout_constraintTop_toBottomOf="@id/crystal_header_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    android:layout_marginTop="4dp"
+        <com.kdt.mcgui.mcVersionSpinner
+            android:id="@+id/mc_version_spinner"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:background="@drawable/crystal_menu_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/edit_profile_button"
+            app:layout_constraintBottom_toTopOf="@id/play_button"/>
 
-    android:text="Fast • Lightweight • Open Source"
+        <ImageButton
+            android:id="@+id/edit_profile_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/crystal_menu_card"
+            android:padding="13dp"
+            android:src="@drawable/ic_px_edit"
+            android:scaleType="fitCenter"
+            android:contentDescription="Edit profile"
+            app:layout_constraintStart_toEndOf="@id/mc_version_spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mc_version_spinner"
+            app:layout_constraintBottom_toBottomOf="@id/mc_version_spinner"/>
 
-    android:textColor="#B8AFFF"
+        <com.kdt.mcgui.MineButton
+            android:id="@+id/play_button"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginBottom="4dp"
+            android:text="PLAY"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-    android:textSize="14sp"
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    app:layout_constraintTop_toBottomOf="@id/crystal_header_title"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
-			<androidx.constraintlayout.widget.Guideline
-				android:id="@+id/center_guideline"
-				android:layout_width="0dp"
-				android:layout_height="0dp"
-				android:orientation="vertical"
-				app:layout_constraintGuide_percent="0.5"/>
+    <!-- Right feature panel -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/crystal_right_panel"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:padding="14dp"
+        app:layout_constraintStart_toEndOf="@id/crystal_left_panel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <TextView
+            android:id="@+id/crystal_features_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QUICK ACCESS"
+            android:textColor="@color/crystal_secondary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-			<com.kdt.mcgui.LauncherMenuButton
-				android:id="@+id/social_media_button"
-				android:background="@drawable/crystal_menu_card"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:layout_marginTop="18dp"
-				android:minHeight="72dp"
-				android:paddingStart="18dp"
-				android:paddingEnd="18dp"
-				style="@style/LauncherMenuButton.Universal"
-				android:layout_width="match_parent"
-				android:text="Community\nJoin our Discord server"
-				android:drawableStart="@drawable/ic_social_media"
-				app:layout_constraintTop_toBottomOf="@id/crystal_header_subtitle"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/crystal_features_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Everything you need, in one place."
+            android:textColor="@color/secondary_text"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/crystal_features_title"/>
 
+        <com.kdt.mcgui.LauncherMenuButton
+            android:id="@+id/social_media_button"
+            style="@style/LauncherMenuButton.Universal"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/crystal_menu_card"
+            android:drawableStart="@drawable/ic_social_media"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="8dp"
+            android:text="Community\nJoin our Discord server"
+            app:layout_constraintWidth_percent="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/crystal_features_subtitle"/>
 
-			<com.kdt.mcgui.LauncherMenuButton
-				android:id="@+id/custom_control_button"
-				android:background="@drawable/crystal_menu_card"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:layout_marginTop="18dp"
-				android:minHeight="72dp"
-				android:paddingStart="18dp"
-				android:paddingEnd="18dp"
-				style="@style/LauncherMenuButton.Universal"
-				android:layout_width="match_parent"
-				android:drawableStart="@drawable/ic_px_gamepad"
-				android:text="Controls\nCustomize your touch layout"
-				app:layout_constraintTop_toBottomOf="@id/social_media_button" />
+        <com.kdt.mcgui.LauncherMenuButton
+            android:id="@+id/custom_control_button"
+            style="@style/LauncherMenuButton.Universal"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/crystal_menu_card"
+            android:drawableStart="@drawable/ic_px_gamepad"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="8dp"
+            android:text="Controls\nCustomize your touch layout"
+            app:layout_constraintWidth_percent="0.49"
+            app:layout_constraintStart_toEndOf="@id/social_media_button"
+            app:layout_constraintTop_toBottomOf="@id/crystal_features_subtitle"/>
 
-			<com.kdt.mcgui.LauncherMenuButton
-				android:id="@+id/install_jar_button"
-				android:background="@drawable/crystal_menu_card"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:layout_marginTop="18dp"
-				android:minHeight="72dp"
-				android:paddingStart="18dp"
-				android:paddingEnd="18dp"
-				style="@style/LauncherMenuButton.Universal"
-				android:layout_width="match_parent"
-				android:drawableStart="@drawable/ic_px_java_run"
-				android:text="Install JAR\nRun Java applications"
-				app:layout_constraintTop_toBottomOf="@id/custom_control_button" />
+        <com.kdt.mcgui.LauncherMenuButton
+            android:id="@+id/install_jar_button"
+            style="@style/LauncherMenuButton.Universal"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/crystal_menu_card"
+            android:drawableStart="@drawable/ic_px_java_run"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="8dp"
+            android:text="Install JAR\nRun Java applications"
+            app:layout_constraintWidth_percent="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/social_media_button"/>
 
-			<com.kdt.mcgui.LauncherMenuButton
-				android:id="@+id/share_logs_button"
-				android:background="@drawable/crystal_menu_card"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:layout_marginTop="18dp"
-				android:minHeight="72dp"
-				android:paddingStart="18dp"
-				android:paddingEnd="18dp"
-				style="@style/LauncherMenuButton.Universal"
-				android:layout_width="match_parent"
-				android:drawableStart="@drawable/ic_px_sharelog"
-				android:text="Share Logs\nExport logs for debugging"
-				app:layout_constraintTop_toBottomOf="@id/install_jar_button" />
+        <com.kdt.mcgui.LauncherMenuButton
+            android:id="@+id/share_logs_button"
+            style="@style/LauncherMenuButton.Universal"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/crystal_menu_card"
+            android:drawableStart="@drawable/ic_px_sharelog"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="8dp"
+            android:text="Share Logs\nExport logs for debugging"
+            app:layout_constraintWidth_percent="0.49"
+            app:layout_constraintStart_toEndOf="@id/install_jar_button"
+            app:layout_constraintTop_toBottomOf="@id/custom_control_button"/>
 
-			<com.kdt.mcgui.LauncherMenuButton
-				android:id="@+id/open_files_button"
-				android:background="@drawable/crystal_menu_card"
-				android:layout_marginStart="20dp"
-				android:layout_marginEnd="20dp"
-				android:layout_marginTop="18dp"
-				android:minHeight="72dp"
-				android:paddingStart="18dp"
-				android:paddingEnd="18dp"
-				style="@style/LauncherMenuButton.Universal"
-				android:layout_width="match_parent"
-				android:drawableStart="@drawable/ic_px_folder"
-				android:text="Files\nBrowse your game directory"
-				app:layout_constraintTop_toBottomOf="@id/share_logs_button" />
-		</androidx.constraintlayout.widget.ConstraintLayout>
-	</ScrollView>
+        <com.kdt.mcgui.LauncherMenuButton
+            android:id="@+id/open_files_button"
+            style="@style/LauncherMenuButton.Universal"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/crystal_menu_card"
+            android:drawableStart="@drawable/ic_px_folder"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="8dp"
+            android:text="Files\nBrowse your game directory"
+            app:layout_constraintWidth_percent="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/install_jar_button"/>
 
-<com.kdt.mcgui.mcVersionSpinner
-    android:id="@+id/mc_version_spinner"
-    android:layout_width="0dp"
-    android:layout_height="56dp"
-
-    android:layout_marginStart="18dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="10dp"
-    android:paddingStart="18dp"
-    android:paddingEnd="18dp"
-
-    android:background="@drawable/crystal_menu_card"
-
-    android:drawableEnd="@drawable/spinner_arrow"
-
-    app:drawableEndSize="@dimen/padding_heavy"
-    app:drawableStartIntegerScaling="true"
-    app:drawableStartSize="@dimen/_36sdp"
-    app:drawableEndPadding="@dimen/_1sdp"
-
-    app:layout_constraintBottom_toTopOf="@id/play_button"
-    app:layout_constraintEnd_toStartOf="@+id/edit_profile_button"
-    app:layout_constraintStart_toStartOf="parent"/>
-
-	<ImageButton
-    android:id="@+id/edit_profile_button"
-
-    android:layout_width="56dp"
-    android:layout_height="56dp"
-
-    android:layout_marginEnd="18dp"
-    android:layout_marginBottom="18dp"
-
-    android:background="@drawable/crystal_menu_card"
-
-    android:padding="18dp"
-
-    android:src="@drawable/ic_px_edit"
-
-    app:layout_constraintBottom_toBottomOf="@id/mc_version_spinner"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="@id/mc_version_spinner"/>
-
-
-	<!-- This view is for cosmetic purpose only -->
-	<View
-		android:id="@+id/_background_display_view"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:background="@color/background_bottom_bar"
-		android:translationZ="-1dp"
-
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintTop_toTopOf="@id/mc_version_spinner" />
-
-	<com.kdt.mcgui.MineButton
-		android:id="@+id/play_button"
-		android:layout_width="match_parent"
-		android:layout_height="64dp"
-
-		android:layout_marginStart="18dp"
-		android:layout_marginEnd="18dp"
-		android:layout_marginBottom="18dp"
-
-		android:textAllCaps="true"
-		android:text="@string/main_play"
-		android:textSize="20sp"
-		android:textStyle="bold"
-		app:layout_constraintBottom_toBottomOf="parent"
-		/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
