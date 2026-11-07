@@ -98,10 +98,12 @@ Without these projects, Crystal Launcher wouldn't be possible.
 
 ## 👨‍💻 Developer
 
-**kakavpopee**
+**klutch-official**
+**originally  made with kakavpopee**
 
-GitHub:
+Github:
 https://github.com/kakavpopee
+https://github.com/klutch-official 
 
 ---
 
