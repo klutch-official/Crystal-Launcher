@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5F23C9">
+    android:background="#09040D"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,41 +14,105 @@
         android:padding="24dp">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CRYSTAL"
+            android:textColor="#FF4FD8"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Account Manager"
             android:textColor="#FFFFFF"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@mipmap/ic_launcher_round"
-            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Manage your Minecraft account"
+            android:textColor="#CFCFCF"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/avatar_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="22dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Minecraft avatar" />
+
+            <TextView
+                android:id="@+id/account_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Steve"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/avatar_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Tap to import a Minecraft skin PNG"
+                android:textColor="#CFCFCF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="CHANGE AVATAR"
+                android:textColor="#FF8AE8"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="ACCOUNTS"
+            android:textColor="#FF8AE8"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_add_account"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add Account"/>
+            android:layout_height="58dp"
+            android:layout_marginTop="12dp"
+            android:text="＋  Add Account"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button_change_avatar"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change Avatar"
-            android:layout_marginTop="12dp"/>
-
-        <Button
-            android:id="@+id/button_change_skin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Change Skin"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="22dp"
+            android:text="CRYSTAL LAUNCHER"
+            android:textColor="#806F82"
+            android:textSize="11sp" />
 
     </LinearLayout>
-
 </ScrollView>
