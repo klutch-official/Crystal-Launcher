@@ -49,18 +49,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-            android:id="@+id/crystal_header_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Your Minecraft experience."
-            android:textColor="@color/secondary_text"
-            android:textSize="11sp"
-            app:layout_constraintTop_toBottomOf="@id/crystal_header_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
         <com.kdt.mcgui.mcVersionSpinner
             android:id="@+id/mc_version_spinner"
             android:layout_width="0dp"
@@ -71,6 +59,7 @@
             android:background="@drawable/crystal_menu_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/edit_profile_button"
+            app:layout_constraintTop_toBottomOf="@id/crystal_header_title"
             app:layout_constraintBottom_toTopOf="@id/play_button"/>
 
         <ImageButton
@@ -118,29 +107,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
-            android:id="@+id/crystal_features_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="QUICK ACCESS"
-            android:textColor="@color/crystal_secondary"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.16"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <TextView
-            android:id="@+id/crystal_features_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Everything you need, in one place."
-            android:textColor="@color/secondary_text"
-            android:textSize="13sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/crystal_features_title"/>
-
         <com.kdt.mcgui.LauncherMenuButton
             android:id="@+id/social_media_button"
             style="@style/LauncherMenuButton.Universal"
@@ -154,10 +120,10 @@
             android:minHeight="72dp"
             android:paddingStart="14dp"
             android:paddingEnd="8dp"
-            android:text="Community\nJoin our Discord server"
+            android:text="Community"
             app:layout_constraintWidth_percent="0.49"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/crystal_features_subtitle"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <com.kdt.mcgui.LauncherMenuButton
             android:id="@+id/custom_control_button"
@@ -172,10 +138,10 @@
             android:minHeight="72dp"
             android:paddingStart="14dp"
             android:paddingEnd="8dp"
-            android:text="Controls\nCustomize your touch layout"
+            android:text="Controls"
             app:layout_constraintWidth_percent="0.49"
             app:layout_constraintStart_toEndOf="@id/social_media_button"
-            app:layout_constraintTop_toBottomOf="@id/crystal_features_subtitle"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <com.kdt.mcgui.LauncherMenuButton
             android:id="@+id/install_jar_button"
@@ -190,7 +156,7 @@
             android:minHeight="72dp"
             android:paddingStart="14dp"
             android:paddingEnd="8dp"
-            android:text="Install JAR\nRun Java applications"
+            android:text="Install JAR"
             app:layout_constraintWidth_percent="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/social_media_button"/>
@@ -208,7 +174,7 @@
             android:minHeight="72dp"
             android:paddingStart="14dp"
             android:paddingEnd="8dp"
-            android:text="Share Logs\nExport logs for debugging"
+            android:text="Logs"
             app:layout_constraintWidth_percent="0.49"
             app:layout_constraintStart_toEndOf="@id/install_jar_button"
             app:layout_constraintTop_toBottomOf="@id/custom_control_button"/>
@@ -226,7 +192,7 @@
             android:minHeight="72dp"
             android:paddingStart="14dp"
             android:paddingEnd="8dp"
-            android:text="Files\nBrowse your game directory"
+            android:text="Files"
             app:layout_constraintWidth_percent="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/install_jar_button"/>
