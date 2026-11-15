@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.22.1)
 
 project("MojoLauncher")
 
+find_package(discord_partner_sdk REQUIRED CONFIG)
+
 add_library(pojavexec SHARED
         affinity.c
         jvm_hooks/emui_iterator_fix_hook.c
@@ -23,7 +25,11 @@ add_library(pojavexec SHARED
 )
 
 target_include_directories(pojavexec PRIVATE .)
-target_link_libraries(pojavexec PRIVATE log)
+target_link_libraries(pojavexec PRIVATE
+    log
+    discord_partner_sdk::discord_partner_sdk
+)
+
 if(CMAKE_ANDROID_ARCH_ABI STREQUAL "arm64-v8a")
     target_sources(pojavexec PRIVATE driver_helper/arm64_func_locator.c)
     target_compile_definitions(pojavexec PRIVATE USE_ARM64_LOCATOR)
