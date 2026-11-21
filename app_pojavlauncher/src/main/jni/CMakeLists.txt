@@ -21,7 +21,7 @@ add_library(pojavexec SHARED
         stdio_is.c
         minibridge.c
         vulkan_loader.c
-
+	discord/discord_presence.c
 )
 
 target_include_directories(pojavexec PRIVATE .)

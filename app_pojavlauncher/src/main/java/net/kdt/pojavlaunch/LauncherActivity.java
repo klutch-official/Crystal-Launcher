@@ -163,7 +163,9 @@ public class LauncherActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pojav_launcher);
+        com.discord.socialsdk.DiscordSocialSdkInit.setEngineActivity(this);
+DiscordPresence.initialize();
+	setContentView(R.layout.activity_pojav_launcher);
 if (OPEN_LOGIN_AFTER_START) {
     OPEN_LOGIN_AFTER_START = false;
 
